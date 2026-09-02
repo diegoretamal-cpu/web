@@ -1,4 +1,6 @@
-const app = requiere('express')();
+const express = requiere('express')();
+const app = express();
+
 
 const PORT = 3000;
 
