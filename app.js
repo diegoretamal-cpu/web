@@ -19,7 +19,7 @@ app.get('/nosotros', (req, res) => {
 });
 
 app.get('/contacto', (req, res) => {
-    res.render('contactos')
+    res.render('contacto')
 });
 
 app.get('/servicios', (req, res) => {
