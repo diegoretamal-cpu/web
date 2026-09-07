@@ -1,12 +1,14 @@
 require('dotenv').config();
-const express = requiere('express');
-
+const express = require('express'); // "require", no "requiere"
+const path = require('path');
 const app = express();
 
-const PORT = process.env.PORT;
+const PORT = 3000;
 
 
 app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.render('index')
@@ -21,7 +23,7 @@ app.get('/contactos', (req, res) => {
 });
 
 app.get('/servicios', (req, res) => {
-    res.render('servicio')
+    res.render('servicios')
 });
 
 app.listen(PORT, () => {
