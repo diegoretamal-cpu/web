@@ -1,4 +1,36 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+    background-color: white;
+}
+
+.hero{
+    min-height: 80vh;
+    background-color : white;
+}
+
+.page-header{
+    background: linear-gradient(135deg,blue, #00bfff);
+    color: white;
+    padding: 90px 0;
+}
+
+service-card{
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 48px;
+    color: green;
+    margin-bottom: 20px;
+}
+
+.about-icon{
+    font-size: 200px;
+    color: #0d6d6d;
 }
