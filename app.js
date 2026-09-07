@@ -18,7 +18,7 @@ app.get('/nosotros', (req, res) => {
     res.render('nosotros')
 });
 
-app.get('/contactos', (req, res) => {
+app.get('/contacto', (req, res) => {
     res.render('contactos')
 });
 
