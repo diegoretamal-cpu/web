@@ -8,6 +8,10 @@ const PORT = 3000;
 
 app.set('view engine', 'ejs');
 
+//MIDDLEWARES
+//Permite leer informacion enviada desde el formulario HTML
+app.use(express.urlencoded({ extended: false }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
@@ -19,7 +23,7 @@ app.get('/nosotros', (req, res) => {
 });
 
 app.get('/contacto', (req, res) => {
-    res.render('contacto')
+    res.render('contacto', { mensajeEnviado: null })
 });
 
 app.post('/contacto', (req, res) => {
@@ -33,11 +37,13 @@ app.post('/contacto', (req, res) => {
     console.log('Nuevo Mensaje');    
     console.log('---------------------');
 
-    console.log(`Nombre: ${nombre}`);
-    console.log(`Correo: ${correo}`);
-    console.log(`Asunto: ${asunto}`);
-    console.log(`Mensaje: ${mensaje}`);
+    console.log('Nombre: ', nombre);
+    console.log('Correo: ', correo);
+    console.log('Asunto: ', asunto);
+    console.log('Mensaje: ', mensaje);
     console.log('---------------------');
+    
+    res.render('contacto', { mensajeEnviado: 'tu informacion ha sido enviada' });
 });
 
 app.get('/servicios', (req, res) => {
