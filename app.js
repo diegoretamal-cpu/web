@@ -22,6 +22,24 @@ app.get('/contacto', (req, res) => {
     res.render('contacto')
 });
 
+app.post('/contacto', (req, res) => {
+    const { nombre, 
+        correo, 
+        asunto, 
+        mensaje} = req.body;
+
+
+    console.log('---------------------');
+    console.log('Nuevo Mensaje');    
+    console.log('---------------------');
+
+    console.log(`Nombre: ${nombre}`);
+    console.log(`Correo: ${correo}`);
+    console.log(`Asunto: ${asunto}`);
+    console.log(`Mensaje: ${mensaje}`);
+    console.log('---------------------');
+});
+
 app.get('/servicios', (req, res) => {
     res.render('servicios')
 });
